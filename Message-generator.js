@@ -30,7 +30,17 @@ const randomMessage = () => {
         action = 'made'; 
     }
 
-    let message = time + ' ' + name + ' ' + action;
+    let object;
+    let objectPicker = Math.floor(Math.random() * 3);
+    if (objectPicker === 0) {
+        object = 'a poop';
+    } else if (objectPicker === 1) {
+        object = 'a cookie'; 
+    } else if (objectPicker === 2) {
+        object = 'a big fat L'; 
+    }
+
+    let message = time + ' ' + name + ' ' + action + ' ' + object;
     return message;
 }
 console.log(randomMessage());
