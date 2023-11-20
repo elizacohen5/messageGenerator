@@ -19,7 +19,18 @@ const randomMessage = () => {
     } else if (namePicker === 2) {
         name = 'Eliza'; 
     }
-    let message = time + ' ' + name;
+
+    let action;
+    let actionPicker = Math.floor(Math.random() * 3);
+    if (actionPicker === 0) {
+        action = 'took';
+    } else if (actionPicker === 1) {
+        action = 'ate'; 
+    } else if (actionPicker === 2) {
+        action = 'made'; 
+    }
+
+    let message = time + ' ' + name + ' ' + action;
     return message;
 }
 console.log(randomMessage());
